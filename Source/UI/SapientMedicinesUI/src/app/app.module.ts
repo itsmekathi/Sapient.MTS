@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './components/page-not-found-component/pag
 import { SearchComponent } from './components/search-component/search.component';
 import { SearchResultsComponent } from './components/search-results-component/search-results.component';
 import { MedicineService } from './services/medicine.service';
+import { MedicineDetailResolver } from './services/medicine-detail-resover';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { MedicineService } from './services/medicine.service';
     SearchResultsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [MedicineService],
+  providers: [MedicineService, MedicineDetailResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -2,11 +2,12 @@
 using Sapient.MTS.Application.Dtos;
 using Sapient.MTS.Application.Services.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sapient.MTS.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
-    public class MedicinesController: ControllerBase
+    public class MedicinesController : ControllerBase
     {
         private IMedicinesService _medicineService;
         public MedicinesController(IMedicinesService medicinesService)
@@ -26,6 +27,13 @@ namespace Sapient.MTS.WebApi.Controllers
                 return ValidationProblem(ModelState);
 
             return Ok(_medicineService.AddMedicine(medicineDto));
+        }
+
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult GetById([FromRoute]int id)
+        {
+            return Ok( _medicineService.GetAllMedicines().FirstOrDefault(_ => _.Id == id));
         }
 
     }

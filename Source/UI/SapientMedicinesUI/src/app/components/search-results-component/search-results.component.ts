@@ -7,5 +7,5 @@ import { MedicineModel } from '../../models/medicine.model';
   styleUrls: ['./search-results.component.scss'],
 })
 export class SearchResultsComponent {
-  @Input() medicines: Array<MedicineModel>;
+  @Input() medicines: Array<MedicineModel> = [];
 }

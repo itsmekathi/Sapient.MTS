@@ -13,6 +13,13 @@ export class MedicineService {
       )
       .toPromise();
   }
+  public async getById(id: number): Promise<MedicineModel> {
+    return this.http
+      .get<MedicineModel>(
+        `${environment.baseApiUrl}/api/medicines/getById/${id}`
+      )
+      .toPromise();
+  }
   public async addMedicine(
     medicineModel: MedicineModel
   ): Promise<MedicineModel> {

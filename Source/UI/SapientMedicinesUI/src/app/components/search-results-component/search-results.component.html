@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12" *ngIf="medicines.length > 0">
+        <div class="col-md-12">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -15,30 +15,14 @@
                 <tbody>
                     <tr *ngFor="let medicine of medicines">
                         <td> {{ medicine.id }}</td>
-                        <td>{{ medicine.fullName}}</td>
+                        <td> <a [routerLink]="['/details', medicine.id]">{{ medicine.fullName}}</a></td>
                         <td>{{medicine.brand}}</td>
                         <td>{{medicine.price}}</td>
                         <td>{{ medicine.quantity}}</td>
                         <td>{{ medicine.expiryDate | date}}</td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-12" *ngIf="medicines.length === 0">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>FullName</th>
-                        <th>Brand</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>ExpiryDate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let medicine of medicines">
-                        <td colspan="6"> No Items found for provided search criteria</td>
+                    <tr *ngIf="medicines?.length === 0">
+                        <td colspan="6" style="text-align: center;"> No Items found for provided search criteria</td>
                     </tr>
                 </tbody>
             </table>
