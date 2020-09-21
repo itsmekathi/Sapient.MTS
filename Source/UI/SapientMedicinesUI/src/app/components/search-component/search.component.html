@@ -1,8 +1,6 @@
 <div class="row mb-2">
-    <div class="col-md-6">
-        <input type="text" name="searchText" id="" [(ngModel)]="searchText">
-    </div>
-    <div class="col-md-6">
-        <button type="btn btn-default">Search</button>
+    <div class="col-md-4 offset-md-8">
+        <input type="text" name="searchText" id="" [(ngModel)]="searchText" class="mr-2">
+        <button type="btn btn-default" (click)="search()">Search</button>
     </div>
 </div>
