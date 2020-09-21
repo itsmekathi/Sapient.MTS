@@ -36,5 +36,12 @@ namespace Sapient.MTS.WebApi.Controllers
             return Ok( _medicineService.GetAllMedicines().FirstOrDefault(_ => _.Id == id));
         }
 
+        [Route("{id}")]
+        [HttpPost]
+        public IActionResult Update([FromBody]MedicineDto medicineDto)
+        {
+            return Ok(_medicineService.UpdateMedicine(medicineDto));
+        }
+
     }
 }

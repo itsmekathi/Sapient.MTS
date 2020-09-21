@@ -8,7 +8,7 @@ namespace Sapient.MTS.Application.Repositories.Interfaces
     {
         IEnumerable<Medicine> GetAll();
         void AddMedicine(Medicine medicine);
-        Task<int> UpdateMedicine(Medicine medicine);
+        void UpdateMedicine(Medicine medicine);
         Task<int> DeleteMedicine(Medicine medicine);
     }
 }

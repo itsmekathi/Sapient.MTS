@@ -3,6 +3,7 @@ using Sapient.MTS.Persistence.Context;
 using Sapient.MTS.Persistence.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Sapient.MTS.Application.Repositories
@@ -30,9 +31,13 @@ namespace Sapient.MTS.Application.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<int> UpdateMedicine(Medicine medicine)
+        public void UpdateMedicine(Medicine medicine)
         {
-            throw new NotImplementedException();
+            var storedMedicine = _medicinesContext.Medicines.FirstOrDefault(_ => _.Id == medicine.Id);
+            _medicinesContext.Medicines.Remove(storedMedicine);
+
+            _medicinesContext.Medicines.Add(medicine);
+            _medicinesContext.SaveChangesToFile();
         }
     }
 }

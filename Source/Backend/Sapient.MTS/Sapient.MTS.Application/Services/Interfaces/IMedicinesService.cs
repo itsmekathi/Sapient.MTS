@@ -8,7 +8,7 @@ namespace Sapient.MTS.Application.Services.Interfaces
     {
         IEnumerable<MedicineDto> GetAllMedicines();
         MedicineDto AddMedicine(MedicineDto medicineDto);
-        Task<int> UpdateMedicine();
+        MedicineDto UpdateMedicine(MedicineDto medicineDto);
         Task<int> DeleteMedicine();
     }
 }

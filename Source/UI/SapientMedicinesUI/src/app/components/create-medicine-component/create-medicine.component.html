@@ -1,3 +1,69 @@
 <div class="container" style="margin-top: 70px;">
-    Create medicine detail component works
+    <div class="row">
+        <div class="col-md-2 mb-2">
+            <button [routerLink]="['/medicines']" class="btn btn-primary">Back</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Create Medicine</h2>
+            <form (ngSubmit)="createMedicine(medicineForm)" #medicineForm="ngForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" id="fullName" required maxlength="1000"
+                        #fullName="ngModel" [(ngModel)]="medicineModel.fullName">
+                    <div class="alert alert-danger"
+                        *ngIf="(fullName.touched || fullName.dirty) && fullName.errors && fullName.errors.required">
+                        Full Name is not valid</div>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input type="text" class="form-control" name="brand" id="brand" required maxlength="200"
+                        #brand="ngModel" [(ngModel)]="medicineModel.brand">
+                    <div class="alert alert-danger"
+                        *ngIf="(brand.touched || brand.dirty) && brand.errors && brand.errors.required">
+                        Brand is not valid</div>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Price</label>
+                    <input type="number" class="form-control" name="price" id="price" required min=0 #price="ngModel"
+                        [(ngModel)]="medicineModel.price">
+                    <div class="alert alert-danger"
+                        *ngIf="(price.touched || price.dirty) && price.errors && price.errors.required">
+                        Brand is not valid</div>
+                    <div class="alert alert-danger"
+                        *ngIf="(price.touched || price.dirty) && price.errors && price.errors.min">
+                        Price cannot be negative</div>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="quantity" required min=1
+                        #quantity="ngModel" [(ngModel)]="medicineModel.quantity">
+                    <div class="alert alert-danger"
+                        *ngIf="(quantity.touched || quantity.dirty) && quantity.errors && quantity.errors.required">
+                        Brand is not valid</div>
+                    <div class="alert alert-danger"
+                        *ngIf="(quantity.touched || quantity.dirty) && quantity.errors && quantity.errors.min">
+                        Quantity should be greater than or equal to 1</div>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="date" class="form-control" name="expiryDate" id="expiryDate" required
+                        #expiryDate="ngModel" [(ngModel)]="medicineModel.expiryDate">
+                    <div class="alert alert-danger"
+                        *ngIf="(expiryDate.touched || expiryDate.dirty) && expiryDate.errors && expiryDate.errors.required">
+                        Brand is not valid</div>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <input type="text" class="form-control" name="notes" id="notes" maxlength="1000" #notes="ngModel"
+                        [(ngModel)]="medicineModel.notes">
+                    <div class="alert alert-danger"
+                        *ngIf="(notes.touched || notes.dirty) && notes.errors && notes.errors.required">
+                        Brand is not valid</div>
+                </div>
+                <button [disabled]="medicineForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>

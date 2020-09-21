@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header-component/header.component';
 import { FooterComponent } from './components/footer-component/footer.component';
 import { MainComponent } from './components/main-component/main.component';
-import { AddMedicineComponent } from './components/add-medicine-component/add-medicine.component';
 import { MedicineDetailsComponent } from './components/medicine-details-component/medicine-details.component';
 import { EditMedicineDetailsComponent } from './components/edit-medicine-details-component/edit-medicine-details.component';
 import { CreateMedicineComponent } from './components/create-medicine-component/create-medicine.component';
@@ -24,7 +23,6 @@ import { MedicineDetailResolver } from './services/medicine-detail-resover';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    AddMedicineComponent,
     MedicineDetailsComponent,
     EditMedicineDetailsComponent,
     CreateMedicineComponent,

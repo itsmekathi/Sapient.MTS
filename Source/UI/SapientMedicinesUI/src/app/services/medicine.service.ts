@@ -30,4 +30,14 @@ export class MedicineService {
       )
       .toPromise();
   }
+  public async updateMedicine(
+    medicineModel: MedicineModel
+  ): Promise<MedicineModel> {
+    return this.http
+      .post<MedicineModel>(
+        `${environment.baseApiUrl}/api/medicines/update/${medicineModel.id}`,
+        medicineModel
+      )
+      .toPromise();
+  }
 }
