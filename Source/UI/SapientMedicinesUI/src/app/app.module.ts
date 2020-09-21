@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer-component/footer.component'
 import { MainComponent } from './components/main-component/main.component';
 import { AddMedicineComponent } from './components/add-medicine-component/add-medicine.component';
 import { MedicineDetailsComponent } from './components/medicine-details-component/medicine-details.component';
+import { EditMedicineDetailsComponent } from './components/edit-medicine-details-component/edit-medicine-details.component';
+import { CreateMedicineComponent } from './components/create-medicine-component/create-medicine.component';
 import { PageNotFoundComponent } from './components/page-not-found-component/page-not-found.component';
 import { SearchComponent } from './components/search-component/search.component';
 import { SearchResultsComponent } from './components/search-results-component/search-results.component';
@@ -24,6 +26,8 @@ import { MedicineDetailResolver } from './services/medicine-detail-resover';
     MainComponent,
     AddMedicineComponent,
     MedicineDetailsComponent,
+    EditMedicineDetailsComponent,
+    CreateMedicineComponent,
     PageNotFoundComponent,
     SearchComponent,
     SearchResultsComponent,

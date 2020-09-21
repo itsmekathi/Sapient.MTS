@@ -13,9 +13,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let medicine of medicines">
+                    <tr *ngFor="let medicine of medicines"
+                        [class]="isMedicineExpiringIn30Days(medicine) ? 'red-background': (medicine.quantity<10 ? 'yellow-background' :'')">
                         <td> {{ medicine.id }}</td>
-                        <td> <a [routerLink]="['/details', medicine.id]">{{ medicine.fullName}}</a></td>
+                        <td> <a [routerLink]="['details', medicine.id]">{{ medicine.fullName}}</a></td>
                         <td>{{medicine.brand}}</td>
                         <td>{{medicine.price}}</td>
                         <td>{{ medicine.quantity}}</td>

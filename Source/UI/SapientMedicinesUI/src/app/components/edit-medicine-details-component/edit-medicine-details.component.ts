@@ -2,13 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MedicineModel } from 'src/app/models/medicine.model';
 import { MedicineService } from 'src/app/services/medicine.service';
-
 @Component({
-  selector: 'app-medicine-details',
-  templateUrl: './medicine-details.component.html',
-  styleUrls: ['./medicine-details.component.scss'],
+  selector: 'app-edit-medicine-details',
+  templateUrl: './edit-medicine-details.component.html',
+  styleUrls: ['./edit-medicine-details.component.scss'],
 })
-export class MedicineDetailsComponent implements OnInit, OnDestroy {
+export class EditMedicineDetailsComponent implements OnInit, OnDestroy {
   medicineDetail: MedicineModel;
   private sub: any;
   constructor(
@@ -20,6 +19,6 @@ export class MedicineDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { MedicineModel } from '../models/medicine.model';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class MedicineService {
@@ -13,12 +14,11 @@ export class MedicineService {
       )
       .toPromise();
   }
-  public async getById(id: number): Promise<MedicineModel> {
+  public getById(id: number): Observable<MedicineModel> {
     return this.http
       .get<MedicineModel>(
         `${environment.baseApiUrl}/api/medicines/getById/${id}`
-      )
-      .toPromise();
+      );
   }
   public async addMedicine(
     medicineModel: MedicineModel

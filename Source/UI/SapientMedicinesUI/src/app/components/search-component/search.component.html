@@ -1,6 +1,7 @@
 <div class="row mb-2">
-    <div class="col-md-4 offset-md-8">
+    <div class="col-md-6 offset-md-6">
         <input type="text" name="searchText" id="" [(ngModel)]="searchText" class="mr-2">
-        <button type="btn btn-default" (click)="search()">Search</button>
+        <button class="btn btn-primary mr-2" (click)="search()">Search</button>
+        <a [routerLink]="['new']" class="btn btn-primary">Add New</a>
     </div>
 </div>
